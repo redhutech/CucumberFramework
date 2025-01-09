@@ -1,18 +1,19 @@
 package StepDefination;
 
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import PageObject.ShopingSiteLogin;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ShopingLoginFlow extends BaseClass{
-	
+
+	@Before
 	public void setup() {
+		
 		WebDriverManager.chromedriver().setup();
 	    driver=new ChromeDriver();
 	}
-	
 	@Given("User Launch Chrome browser for ShopingSite")
 	public void user_launch_chrome_browser_ShopingSite() {
 	    shopingSitelgn= new ShopingSiteLogin(driver);
